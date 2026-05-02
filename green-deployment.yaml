@@ -51,26 +51,6 @@ spec:
         - name: http
           containerPort: 5000
           protocol: TCP
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: http
-            scheme: HTTP
-          initialDelaySeconds: 10
-          periodSeconds: 15
-          timeoutSeconds: 5
-          successThreshold: 1
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: http
-            scheme: HTTP
-          initialDelaySeconds: 5
-          periodSeconds: 10
-          timeoutSeconds: 3
-          successThreshold: 1
-          failureThreshold: 2
         resources:
           requests:
             cpu: 100m
